@@ -15,6 +15,7 @@
 		7FD905872B498244005D82AC /* PersonalContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905862B498244005D82AC /* PersonalContact.swift */; };
 		7FD905892B498486005D82AC /* PersonalContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905882B498486005D82AC /* PersonalContactManager.swift */; };
 		7FD9058B2B498619005D82AC /* PersonalContactManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */; };
+		7FD9058D2B498936005D82AC /* PersonalContactManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7FD905862B498244005D82AC /* PersonalContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContact.swift; sourceTree = "<group>"; };
 		7FD905882B498486005D82AC /* PersonalContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManager.swift; sourceTree = "<group>"; };
 		7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManagerImpl.swift; sourceTree = "<group>"; };
+		7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				7FD905862B498244005D82AC /* PersonalContact.swift */,
 				7FD905882B498486005D82AC /* PersonalContactManager.swift */,
 				7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */,
+				7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				7FA930E92B451BAF003B9CC3 /* ViewController.swift in Sources */,
 				7FD905892B498486005D82AC /* PersonalContactManager.swift in Sources */,
 				7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */,
+				7FD9058D2B498936005D82AC /* PersonalContactManagerMock.swift in Sources */,
 				7FA930E72B451BAF003B9CC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
