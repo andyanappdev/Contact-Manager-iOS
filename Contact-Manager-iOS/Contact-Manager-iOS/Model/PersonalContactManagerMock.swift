@@ -32,4 +32,14 @@ final class PersonalContactManagerMock: PersonalContactManager {
     func updateSelectedPersonalContact(at index: Int, with selectedPersonalContact: PersonalContact) {
         personalContactsList[index] = selectedPersonalContact
     }
+    
+    /// 특정 연락처를 얻는 함수
+    subscript(index: Int) -> PersonalContact {
+        get {
+            return personalContactsList[index]
+        }
+        set {
+            personalContactsList[index] = newValue
+        }
+    }
 }
