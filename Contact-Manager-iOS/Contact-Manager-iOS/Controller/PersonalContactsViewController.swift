@@ -10,7 +10,7 @@ import UIKit
 final class PersonalContactsViewController: UIViewController {
     
     // MARK: - Properties
-    private let personalContactManager: PersonalContactManager = PersonalContactManagerMock()
+    private let personalContactManager: PersonalContactManager = PersonalContactManager(personalContactsList: [])
     private let personalContactsView: PersonalContactsView = PersonalContactsView()
     
     
@@ -22,6 +22,7 @@ final class PersonalContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        personalContactManager.makePersonalContactsListData()
         configureTableView()
     }
     

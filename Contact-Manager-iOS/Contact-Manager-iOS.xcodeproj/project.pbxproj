@@ -13,9 +13,7 @@
 		7FA930EE2B451BB1003B9CC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA930ED2B451BB1003B9CC3 /* Assets.xcassets */; };
 		7FA930F12B451BB1003B9CC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA930EF2B451BB1003B9CC3 /* LaunchScreen.storyboard */; };
 		7FD905872B498244005D82AC /* PersonalContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905862B498244005D82AC /* PersonalContact.swift */; };
-		7FD905892B498486005D82AC /* PersonalContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905882B498486005D82AC /* PersonalContactManager.swift */; };
-		7FD9058B2B498619005D82AC /* PersonalContactManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */; };
-		7FD9058D2B498936005D82AC /* PersonalContactManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */; };
+		7FD9058B2B498619005D82AC /* PersonalContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058A2B498619005D82AC /* PersonalContactManager.swift */; };
 		7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */; };
 		7FD905912B498DCD005D82AC /* PersonalContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -29,9 +27,7 @@
 		7FA930F02B451BB1003B9CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FA930F22B451BB1003B9CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD905862B498244005D82AC /* PersonalContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContact.swift; sourceTree = "<group>"; };
-		7FD905882B498486005D82AC /* PersonalContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManager.swift; sourceTree = "<group>"; };
-		7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManagerImpl.swift; sourceTree = "<group>"; };
-		7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManagerMock.swift; sourceTree = "<group>"; };
+		7FD9058A2B498619005D82AC /* PersonalContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManager.swift; sourceTree = "<group>"; };
 		7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactsView.swift; sourceTree = "<group>"; };
 		7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,9 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD905862B498244005D82AC /* PersonalContact.swift */,
-				7FD905882B498486005D82AC /* PersonalContactManager.swift */,
-				7FD9058A2B498619005D82AC /* PersonalContactManagerImpl.swift */,
-				7FD9058C2B498936005D82AC /* PersonalContactManagerMock.swift */,
+				7FD9058A2B498619005D82AC /* PersonalContactManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,14 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD9058B2B498619005D82AC /* PersonalContactManagerImpl.swift in Sources */,
+				7FD9058B2B498619005D82AC /* PersonalContactManager.swift in Sources */,
 				7FD905872B498244005D82AC /* PersonalContact.swift in Sources */,
 				7FA930E92B451BAF003B9CC3 /* PersonalContactsViewController.swift in Sources */,
 				7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */,
-				7FD905892B498486005D82AC /* PersonalContactManager.swift in Sources */,
 				7FD905912B498DCD005D82AC /* PersonalContactTableViewCell.swift in Sources */,
 				7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */,
-				7FD9058D2B498936005D82AC /* PersonalContactManagerMock.swift in Sources */,
 				7FA930E72B451BAF003B9CC3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
