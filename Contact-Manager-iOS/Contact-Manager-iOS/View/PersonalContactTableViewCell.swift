@@ -40,8 +40,8 @@ final class PersonalContactTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let nameWithAgeStackView: UIStackView = {
-        let stackView = UIStackView()
+    private lazy var nameWithAgeStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [personalContactNameLabel, personalContactAgeLabel])
         stackView.spacing = 1
         stackView.axis = .horizontal
         stackView.distribution = .fill
@@ -50,8 +50,8 @@ final class PersonalContactTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private let nameWithContactNumberStackView: UIStackView = {
-        let stackView = UIStackView()
+    private lazy var nameWithContactNumberStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [nameWithAgeStackView, personalContactContactNumberLabel])
         stackView.spacing = 2
         stackView.axis = .vertical
         stackView.distribution = .fill
@@ -65,7 +65,7 @@ final class PersonalContactTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: "PersonalContactTableViewCell")
         
-        configureStackView()
+        configureUI()
         configureCellDetail()
     }
     
@@ -74,15 +74,15 @@ final class PersonalContactTableViewCell: UITableViewCell {
     }
     
     
-    // MARK: - Helpers Functions
-    private func configureStackView() {
+    // MARK: - Methods
+    private func configureUI() {
         self.addSubview(nameWithContactNumberStackView)
         
-        nameWithAgeStackView.addArrangedSubview(personalContactNameLabel)
-        nameWithAgeStackView.addArrangedSubview(personalContactAgeLabel)
-        
-        nameWithContactNumberStackView.addArrangedSubview(nameWithAgeStackView)
-        nameWithContactNumberStackView.addArrangedSubview(personalContactContactNumberLabel)
+//        nameWithAgeStackView.addArrangedSubview(personalContactNameLabel)
+//        nameWithAgeStackView.addArrangedSubview(personalContactAgeLabel)
+//        
+//        nameWithContactNumberStackView.addArrangedSubview(nameWithAgeStackView)
+//        nameWithContactNumberStackView.addArrangedSubview(personalContactContactNumberLabel)
     }
     
     private func configureCellDetail() {
