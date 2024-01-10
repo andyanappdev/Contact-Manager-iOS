@@ -28,9 +28,9 @@ final class PersonalContactsViewController: UIViewController {
     }
     
     
-    // MARK: - Helpers Funtions
+    // MARK: - Methods
     private func configureNavigationBar() {
-        title = "연 락 처"
+        title = "연락처"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
     }
     
@@ -39,11 +39,11 @@ final class PersonalContactsViewController: UIViewController {
         personalContactsView.personalContactsTableView.register(PersonalContactTableViewCell.self, forCellReuseIdentifier: "PersonalContactTableViewCell")
     }
     
+    
     // MARK: - Selectors
     @objc func plusButtonTapped() {
-        let detailPersonalConactViewController: UIViewController = DetailPersonalContactViewController()
         let detailPersonalConactNavigationViewController = UINavigationController(rootViewController: DetailPersonalContactViewController())
-        present(detailPersonalConactViewController, animated: true)
+        present(detailPersonalConactNavigationViewController, animated: true)
     }
     
 }
