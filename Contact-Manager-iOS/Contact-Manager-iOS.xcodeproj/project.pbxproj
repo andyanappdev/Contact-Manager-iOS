@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F1C095E2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1C095D2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift */; };
+		7F3890FB2B4EC62E0052469D /* PersonalContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */; };
 		7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA930E42B451BAF003B9CC3 /* AppDelegate.swift */; };
 		7FA930E72B451BAF003B9CC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA930E62B451BAF003B9CC3 /* SceneDelegate.swift */; };
 		7FA930E92B451BAF003B9CC3 /* PersonalContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA930E82B451BAF003B9CC3 /* PersonalContactsViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		7F1C095D2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonalContactViewController.swift; sourceTree = "<group>"; };
+		7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactDetailView.swift; sourceTree = "<group>"; };
 		7FA930E12B451BAF003B9CC3 /* Contact-Manager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact-Manager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA930E42B451BAF003B9CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA930E62B451BAF003B9CC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */,
 				7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */,
+				7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */,
 				7FD905912B498DCD005D82AC /* PersonalContactTableViewCell.swift in Sources */,
 				7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */,
+				7F3890FB2B4EC62E0052469D /* PersonalContactDetailView.swift in Sources */,
 				7F1C095E2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift in Sources */,
 				7FA930E72B451BAF003B9CC3 /* SceneDelegate.swift in Sources */,
 			);
