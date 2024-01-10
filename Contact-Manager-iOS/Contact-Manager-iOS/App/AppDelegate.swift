@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let apperance = UINavigationBarAppearance()
-        apperance.configureWithDefaultBackground()
-        apperance.backgroundColor = .white
-        apperance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.darkGray]
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
         
-        UINavigationBar.appearance().standardAppearance = apperance
-        UINavigationBar.appearance().compactAppearance = apperance
-        UINavigationBar.appearance().scrollEdgeAppearance = apperance
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = apperance
         UINavigationBar.appearance().prefersLargeTitles = false
         
         return true
