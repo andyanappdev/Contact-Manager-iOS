@@ -23,15 +23,29 @@ final class PersonalContactsViewController: UIViewController {
         super.viewDidLoad()
         
         personalContactManager.makePersonalContactsListData()
+        configureNavigationBar()
         configureTableView()
     }
     
     
     // MARK: - Helpers Funtions
+    private func configureNavigationBar() {
+        title = "연 락 처"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
+    }
+    
     private func configureTableView() {
         personalContactsView.personalContactsTableView.dataSource = self
         personalContactsView.personalContactsTableView.register(PersonalContactTableViewCell.self, forCellReuseIdentifier: "PersonalContactTableViewCell")
     }
+    
+    // MARK: - Selectors
+    @objc func plusButtonTapped() {
+        let detailPersonalConactViewController: UIViewController = DetailPersonalContactViewController()
+        let detailPersonalConactNavigationViewController = UINavigationController(rootViewController: DetailPersonalContactViewController())
+        present(detailPersonalConactViewController, animated: true)
+    }
+    
 }
 
 
