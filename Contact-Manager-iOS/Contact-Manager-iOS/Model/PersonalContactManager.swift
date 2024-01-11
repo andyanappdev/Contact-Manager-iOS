@@ -37,8 +37,10 @@ final class PersonalContactManager {
         personalContactsList.remove(at: index)
     }
     
-    func updateSelectedPersonalContact(at index: Int, with selectedPersonalContact: PersonalContact) {
-        personalContactsList[index] = selectedPersonalContact
+    func updateSelectedPersonalContact(personalContactID id: Int, with selectedPersonalContact: PersonalContact) {
+        if let index = personalContactsList.firstIndex(where: { $0.id == id }) {
+            personalContactsList[index] = selectedPersonalContact
+        }
     }
     
     /// 특정 연락처를 얻는 함수
