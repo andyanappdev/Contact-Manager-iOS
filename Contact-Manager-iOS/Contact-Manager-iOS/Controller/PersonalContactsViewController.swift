@@ -16,7 +16,7 @@ final class PersonalContactsViewController: UIViewController {
     
     // MARK: - Life Cycle
     override func loadView() {
-    view = personalContactsView
+        view = personalContactsView
     }
     
     override func viewDidLoad() {
@@ -36,13 +36,20 @@ final class PersonalContactsViewController: UIViewController {
     
     private func configureTableView() {
         personalContactsView.personalContactsTableView.dataSource = self
+        personalContactsView.personalContactsTableView.delegate = self
         personalContactsView.personalContactsTableView.register(PersonalContactTableViewCell.self, forCellReuseIdentifier: "PersonalContactTableViewCell")
     }
     
     
     // MARK: - Selectors
-    @objc func plusButtonTapped() {
-        let detailPersonalConactNavigationViewController = UINavigationController(rootViewController: DetailPersonalContactViewController())
+    @objc private func plusButtonTapped() {
+        let detailPersonalConactViewController = DetailPersonalContactViewController()
+        let detailPersonalConactNavigationViewController = UINavigationController(rootViewController: detailPersonalConactViewController)
+        
+        detailPersonalConactViewController.delegate = self
+        detailPersonalConactViewController.title = "새 연락처"
+        detailPersonalConactViewController.toggleIsPresentedModally()
+        
         present(detailPersonalConactNavigationViewController, animated: true)
     }
     
@@ -63,5 +70,31 @@ extension PersonalContactsViewController: UITableViewDataSource {
         reusableCell.personalContact = personalContactManager.showUpAllPersonalContacts()[indexPath.row]
         
         return reusableCell
+    }
+}
+
+extension PersonalContactsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let detailPersonalConactViewController = DetailPersonalContactViewController()
+//        let detailPersonalConactNavigationViewController = UINavigationController(rootViewController: detailPersonalConactViewController)
+        let detailPersonalConactViewController: DetailPersonalContactViewController = DetailPersonalContactViewController()
+        
+        detailPersonalConactViewController.delegate = self
+        detailPersonalConactViewController.title = "연락처 수정"
+        detailPersonalConactViewController.personalContact = personalContactManager.showUpAllPersonalContacts()[indexPath.row]
+        
+        navigationController?.pushViewController(detailPersonalConactViewController, animated: true)
+    }
+}
+
+extension PersonalContactsViewController: PersonalContactDelegate {
+    func addNewPersonalContact(newPersonalContact: PersonalContact) {
+        personalContactManager.addNewPersonalContact(newPersonalContact: newPersonalContact)
+        personalContactsView.personalContactsTableView.reloadData()
+    }
+    
+    func updateSelectedPersonalContact(personalContactID id: Int, with selectedPersonalContact: PersonalContact) {
+        personalContactManager.updateSelectedPersonalContact(personalContactID: id, with: selectedPersonalContact)
+        personalContactsView.personalContactsTableView.reloadData()
     }
 }
