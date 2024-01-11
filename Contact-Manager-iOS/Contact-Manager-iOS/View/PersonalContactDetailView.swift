@@ -13,9 +13,9 @@ final class PersonalContactDetailView: UIView {
     var personalContact: PersonalContact? {
         didSet {
             guard let personalContact = personalContact else { return }
-            nameTextField.text = "\(personalContact.name)"
-            ageTextField.text = "\(personalContact.age ?? "")"
-            contactNumberTextField.text = "\(personalContact.contactNumber ?? "")"
+            nameTextField.text = personalContact.name
+            ageTextField.text = personalContact.age
+            contactNumberTextField.text = personalContact.contactNumber
         }
     }
     
@@ -148,6 +148,18 @@ final class PersonalContactDetailView: UIView {
     // MARK: - Methods
     private func configureUI() {
         self.addSubview(allStackView)
+    }
+    
+    func accessNameTextField() -> UITextField {
+        return nameTextField
+    }
+    
+    func accessAgeTextField() -> UITextField {
+        return ageTextField
+    }
+    
+    func accessContactNumberTextField() -> UITextField {
+        return contactNumberTextField
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
