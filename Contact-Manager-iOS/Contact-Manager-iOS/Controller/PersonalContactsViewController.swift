@@ -71,6 +71,14 @@ extension PersonalContactsViewController: UITableViewDataSource {
         
         return reusableCell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let id = personalContactManager.showUpAllPersonalContacts()[indexPath.row].id
+            personalContactManager.deleteSelectedPersonalContact(personalContactID: id)
+            personalContactsView.personalContactsTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension PersonalContactsViewController: UITableViewDelegate {
@@ -80,7 +88,7 @@ extension PersonalContactsViewController: UITableViewDelegate {
         let detailPersonalConactViewController: DetailPersonalContactViewController = DetailPersonalContactViewController()
         
         detailPersonalConactViewController.delegate = self
-        detailPersonalConactViewController.title = "연락처 수정"
+        detailPersonalConactViewController.title = "기존 연락처 수정"
         detailPersonalConactViewController.personalContact = personalContactManager.showUpAllPersonalContacts()[indexPath.row]
         
         navigationController?.pushViewController(detailPersonalConactViewController, animated: true)
