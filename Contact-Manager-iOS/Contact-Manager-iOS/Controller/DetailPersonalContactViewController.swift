@@ -28,13 +28,13 @@ final class DetailPersonalContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configurepersonalContactData()
+        configurePersonalContactData()
         configureNavigationBar()
     }
     
     
     // MARK: - Methods
-    private func configurepersonalContactData() {
+    private func configurePersonalContactData() {
         personalContactDetailView.personalContact = personalContact
     }
     
@@ -43,7 +43,33 @@ final class DetailPersonalContactViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
     }
-   
+    
+    private func presentCancelAlert() {
+        let alert = UIAlertController(title: "정말로 취소하시겠습니까?", message: nil, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "아니오", style: .default)
+        let okAction = UIAlertAction(title: "예", style: .destructive) { [weak self] _ in
+            self?.moveToPersonalContactsViewScreen()
+        }
+        alert.addAction(noAction)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func moveToPersonalContactsViewScreen() {
+        if isPresentedModally {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func presentSaveFailureAlert(message: String) {
+        let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     func toggleIsPresentedModally() {
             isPresentedModally = !isPresentedModally
     }
@@ -70,15 +96,10 @@ final class DetailPersonalContactViewController: UIViewController {
 //            
 //            delegate?.updateSelectedPersonalContact(personalContactID: personalContactID, with: <#T##PersonalContact#>)
             
-
         }
     }
     
     @objc private func cancelButtonTapped() {
-        if isPresentedModally {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            navigationController?.popViewController(animated: true)
-        }
+        presentCancelAlert()
     }
 }
