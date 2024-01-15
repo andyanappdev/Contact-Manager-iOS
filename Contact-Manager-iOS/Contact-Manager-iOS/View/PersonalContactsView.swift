@@ -44,7 +44,7 @@ final class PersonalContactsView: UIView {
     }
     
     private func configuerConstraints() {
-        personalContactsTableView.rowHeight = 60
+        personalContactsTableView.rowHeight = 80
         
         NSLayoutConstraint.activate([
             personalContactsTableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),

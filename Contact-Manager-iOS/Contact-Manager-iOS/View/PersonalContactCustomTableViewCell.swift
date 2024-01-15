@@ -13,9 +13,9 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     var personalContact: PersonalContact? {
         didSet {
             guard let personalContact = personalContact else { return }
-            personalContactNameLabel.text = personalContact.name
-            personalContactAgeLabel.text = "(\(personalContact.age ?? "0"))"
-            personalContactContactNumberLabel.text = personalContact.contactNumber
+            personalContactNameLabel.text = "이   름 : \(personalContact.name)"
+            personalContactAgeLabel.text = "나   이 : \(personalContact.age ?? "나이 없음")"
+            personalContactContactNumberLabel.text = "연락처 : \(personalContact.contactNumber ?? "연락처 없음")"
         }
     }
     
@@ -40,25 +40,35 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var nameWithAgeStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [personalContactNameLabel, personalContactAgeLabel])
-        stackView.spacing = 1
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    private lazy var nameWithContactNumberStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameWithAgeStackView, personalContactContactNumberLabel])
-        stackView.spacing = 2
+    private lazy var allStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [personalContactNameLabel, personalContactAgeLabel, personalContactContactNumberLabel])
+        stackView.spacing = 5
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .leading
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+//    private lazy var nameWithAgeStackView: UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [personalContactNameLabel, personalContactAgeLabel])
+//        stackView.spacing = 1
+//        stackView.axis = .horizontal
+//        stackView.distribution = .fill
+//        stackView.alignment = .fill
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        return stackView
+//    }()
+//    
+//    private lazy var nameWithContactNumberStackView: UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [nameWithAgeStackView, personalContactContactNumberLabel])
+//        stackView.spacing = 2
+//        stackView.axis = .vertical
+//        stackView.distribution = .fill
+//        stackView.alignment = .leading
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        return stackView
+//    }()
     
     
     // MARK: - Initializer
@@ -76,7 +86,7 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     private func configureUI() {
-        self.addSubview(nameWithContactNumberStackView)
+        self.addSubview(allStackView)
         
 //        nameWithAgeStackView.addArrangedSubview(personalContactNameLabel)
 //        nameWithAgeStackView.addArrangedSubview(personalContactAgeLabel)
@@ -99,8 +109,8 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            nameWithContactNumberStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            nameWithContactNumberStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
+            allStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            allStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
         ])
     }
 }
