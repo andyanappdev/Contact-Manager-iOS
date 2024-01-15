@@ -33,14 +33,22 @@ final class PersonalContactManager {
         personalContactsList.append(newPersonalContact)
     }
     
-    func deleteSelectedPersonalContact(at index: Int) {
-        personalContactsList.remove(at: index)
+    func deleteSelectedPersonalContact(personalContactID id: Int) {
+        if let index = personalContactsList.firstIndex(where: { $0.id == id }) {
+            personalContactsList.remove(at: index)
+        }
+//        guard let index = personalContactsList.firstIndex(where: { $0.id == id}) else { return }
+//        guard index >= 0 && index < personalContactsList.count else { return }
+//        personalContactsList.remove(at: index)
     }
     
     func updateSelectedPersonalContact(personalContactID id: Int, with selectedPersonalContact: PersonalContact) {
         if let index = personalContactsList.firstIndex(where: { $0.id == id }) {
             personalContactsList[index] = selectedPersonalContact
         }
+//        guard let index = personalContactsList.firstIndex(where: { $0.id == id }) else { return }
+//        guard index >= 0 && index < personalContactsList.count else { return }
+//        personalContactsList[index] = selectedPersonalContact
     }
     
     /// 특정 연락처를 얻는 함수
