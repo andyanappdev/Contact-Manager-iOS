@@ -37,7 +37,7 @@ final class PersonalContactsViewController: UIViewController {
     private func configureTableView() {
         personalContactsView.personalContactsTableView.dataSource = self
         personalContactsView.personalContactsTableView.delegate = self
-        personalContactsView.personalContactsTableView.register(PersonalContactTableViewCell.self, forCellReuseIdentifier: "PersonalContactTableViewCell")
+        personalContactsView.personalContactsTableView.register(PersonalContactCustomTableViewCell.self, forCellReuseIdentifier: "PersonalContactTableViewCell")
     }
     
     
@@ -63,7 +63,7 @@ extension PersonalContactsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let reusableCell = tableView.dequeueReusableCell(withIdentifier: "PersonalContactTableViewCell", for: indexPath) as? PersonalContactTableViewCell else {
+        guard let reusableCell = tableView.dequeueReusableCell(withIdentifier: "PersonalContactTableViewCell", for: indexPath) as? PersonalContactCustomTableViewCell else {
             fatalError("Error: Cannot dequeue resuable cell")
         }
         

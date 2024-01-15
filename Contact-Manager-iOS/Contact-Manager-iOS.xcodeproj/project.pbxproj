@@ -18,7 +18,7 @@
 		7FD905872B498244005D82AC /* PersonalContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905862B498244005D82AC /* PersonalContact.swift */; };
 		7FD9058B2B498619005D82AC /* PersonalContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058A2B498619005D82AC /* PersonalContactManager.swift */; };
 		7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */; };
-		7FD905912B498DCD005D82AC /* PersonalContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */; };
+		7FD905912B498DCD005D82AC /* PersonalContactCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD905902B498DCD005D82AC /* PersonalContactCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		7FD905862B498244005D82AC /* PersonalContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContact.swift; sourceTree = "<group>"; };
 		7FD9058A2B498619005D82AC /* PersonalContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactManager.swift; sourceTree = "<group>"; };
 		7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactsView.swift; sourceTree = "<group>"; };
-		7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactTableViewCell.swift; sourceTree = "<group>"; };
+		7FD905902B498DCD005D82AC /* PersonalContactCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD9058E2B498B5B005D82AC /* PersonalContactsView.swift */,
-				7FD905902B498DCD005D82AC /* PersonalContactTableViewCell.swift */,
+				7FD905902B498DCD005D82AC /* PersonalContactCustomTableViewCell.swift */,
 				7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */,
 			);
 			path = View;
@@ -191,7 +191,7 @@
 				7FD905872B498244005D82AC /* PersonalContact.swift in Sources */,
 				7FA930E92B451BAF003B9CC3 /* PersonalContactsViewController.swift in Sources */,
 				7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */,
-				7FD905912B498DCD005D82AC /* PersonalContactTableViewCell.swift in Sources */,
+				7FD905912B498DCD005D82AC /* PersonalContactCustomTableViewCell.swift in Sources */,
 				7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */,
 				7F3890FB2B4EC62E0052469D /* PersonalContactDetailView.swift in Sources */,
 				7F1C095E2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift in Sources */,

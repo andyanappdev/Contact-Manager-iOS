@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PersonalContactTableViewCell: UITableViewCell {
+final class PersonalContactCustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     var personalContact: PersonalContact? {
