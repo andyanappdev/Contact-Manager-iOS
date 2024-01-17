@@ -78,9 +78,9 @@ final class DetailPersonalContactViewController: UIViewController {
     // MARK: - Selectors
     @objc private func saveButtonTapped() {
         if personalContact == nil {
-            let name = personalContactDetailView.accessNameTextField().text ?? ""
-            let age = personalContactDetailView.accessAgeTextField().text ?? ""
-            let contactNumber = personalContactDetailView.accessContactNumberTextField().text ?? ""
+            let name = personalContactDetailView.accessNameTextField.text ?? ""
+            let age = personalContactDetailView.accessAgeTextField.text ?? ""
+            let contactNumber = personalContactDetailView.accessContactNumberTextField.text ?? ""
             
             let newPersonalContact = PersonalContact(name: name, age: age, contactNumber: contactNumber)
             
