@@ -18,11 +18,12 @@ final class PersonalContactsView: UIView {
     
     
     // MARK: - Initializer
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureUI()
+        self.backgroundColor = UIColor.systemBackground
+        configureTableView()
+        configuerConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -31,21 +32,14 @@ final class PersonalContactsView: UIView {
     
     
     // MARK: - Methods
-    private func configureUI() {
-        self.backgroundColor = .white
+    private func configureTableView() {
         self.addSubview(personalContactsTableView)
+        personalContactsTableView.rowHeight = 80
     }
     
     
     // MARK: - AutoLayout Setting
-    override func updateConstraints() {
-        configuerConstraints()
-        super.updateConstraints()
-    }
-    
     private func configuerConstraints() {
-        personalContactsTableView.rowHeight = 80
-        
         NSLayoutConstraint.activate([
             personalContactsTableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),
             personalContactsTableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0),
