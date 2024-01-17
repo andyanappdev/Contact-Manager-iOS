@@ -22,6 +22,7 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     private let personalContactNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.textColor = UIColor.label
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,6 +30,7 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     private let personalContactAgeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.label
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,6 +38,7 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     private let personalContactContactNumberLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.label
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -43,9 +46,9 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     private lazy var allStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [personalContactNameLabel, personalContactAgeLabel, personalContactContactNumberLabel])
         stackView.spacing = 5
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .leading
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution = UIStackView.Distribution.fill
+        stackView.alignment = UIStackView.Alignment.leading
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -75,8 +78,9 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: "PersonalContactTableViewCell")
         
-        configureUI()
+        configureStackView()
         configureCellDetail()
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -85,9 +89,8 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     
     
     // MARK: - Methods
-    private func configureUI() {
+    private func configureStackView() {
         self.addSubview(allStackView)
-        
 //        nameWithAgeStackView.addArrangedSubview(personalContactNameLabel)
 //        nameWithAgeStackView.addArrangedSubview(personalContactAgeLabel)
 //        
@@ -96,17 +99,12 @@ final class PersonalContactCustomTableViewCell: UITableViewCell {
     }
     
     private func configureCellDetail() {
-        accessoryType = .disclosureIndicator
+        accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 //        selectionStyle = .gray
     }
     
     
     // MARK: - AutoLayout Setting
-    override func updateConstraints() {
-        configureConstraints()
-        super.updateConstraints()
-    }
-    
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             allStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
