@@ -77,26 +77,23 @@ final class DetailPersonalContactViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func saveButtonTapped() {
+        let currentPersonalContactInput: PersonalContactInput = personalContactDetailView.fetchCurrentPersonalContactInput()
         if personalContact == nil {
-            let name = personalContactDetailView.accessNameTextField.text ?? ""
-            let age = personalContactDetailView.accessAgeTextField.text ?? ""
-            let contactNumber = personalContactDetailView.accessContactNumberTextField.text ?? ""
-            
-            let newPersonalContact = PersonalContact(name: name, age: age, contactNumber: contactNumber)
+            let newPersonalContact = PersonalContact(name: currentPersonalContactInput.name, age: currentPersonalContactInput.age, contactNumber: currentPersonalContactInput.contactNumber)
             
             delegate?.addNewPersonalContact(newPersonalContact: newPersonalContact)
         } else {
-//            let personalContactID = personalContact?.id
-//            personalContact?.name = personalContactDetailView.nameTextField.text
-//            personalContact?.age = personalContactDetailView.ageTextField.text
-//            personalContact?.contactNumber = personalContactDetailView.contactNumberTextField.text
-//            
-//            personalContactDetailView.personalContact = personalContact
-//            
-//            
-//            delegate?.updateSelectedPersonalContact(personalContactID: personalContactID, with: <#T##PersonalContact#>)
-            
+            if var personalContact = personalContact {
+                personalContact.name = currentPersonalContactInput.name
+                personalContact.age = currentPersonalContactInput.age
+                personalContact.contactNumber = currentPersonalContactInput.contactNumber
+                
+                personalContactDetailView.personalContact = personalContact
+                
+                delegate?.updateSelectedPersonalContact(personalContactID: personalContact.id, with: personalContact)
+            }
         }
+        moveToPersonalContactsViewScreen()
     }
     
     @objc private func cancelButtonTapped() {

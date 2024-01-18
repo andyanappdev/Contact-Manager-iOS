@@ -69,12 +69,6 @@ final class PersonalContactDetailView: UIView {
         return textField
     }()
     
-    var accessNameTextField: UITextField {
-        get {
-            return nameTextField
-        }
-    }
-    
     private let ageTextField: UITextField = {
         let textField = UITextField()
         textField.frame.size.height = 20
@@ -91,12 +85,6 @@ final class PersonalContactDetailView: UIView {
         return textField
     }()
     
-    var accessAgeTextField: UITextField {
-        get {
-            return ageTextField
-        }
-    }
-    
     private let contactNumberTextField: UITextField = {
         let textField = UITextField()
         textField.frame.size.height = 20
@@ -112,12 +100,6 @@ final class PersonalContactDetailView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
-    
-    var accessContactNumberTextField: UITextField {
-        get {
-            return contactNumberTextField
-        }
-    }
     
     private lazy var labelStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, ageLabel, contactNumberLabel])
@@ -167,6 +149,14 @@ final class PersonalContactDetailView: UIView {
     // MARK: - Methods
     private func configureStackView() {
         self.addSubview(allStackView)
+    }
+    
+    func fetchCurrentPersonalContactInput() -> PersonalContactInput {
+        let nameInput: String = nameTextField.text ?? ""
+        let ageInput: String = ageTextField.text ?? ""
+        let contactNumberInput: String = contactNumberTextField.text ?? ""
+        let personalContactInput = PersonalContactInput(name: nameInput, age: ageInput, contactNumber: contactNumberInput)
+        return personalContactInput
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
