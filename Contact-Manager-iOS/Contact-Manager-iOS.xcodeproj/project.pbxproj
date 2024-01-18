@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F1C095E2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1C095D2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift */; };
+		7F224E7C2B58A8F100D79C10 /* PersonalContactInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F224E7B2B58A8F100D79C10 /* PersonalContactInput.swift */; };
 		7F3890FB2B4EC62E0052469D /* PersonalContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */; };
 		7F9F5C522B4F7E6100B8F4ED /* PersonalContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F5C512B4F7E6000B8F4ED /* PersonalContactDelegate.swift */; };
 		7FA930E52B451BAF003B9CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA930E42B451BAF003B9CC3 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		7F1C095D2B4E3A740045E9B9 /* DetailPersonalContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonalContactViewController.swift; sourceTree = "<group>"; };
+		7F224E7B2B58A8F100D79C10 /* PersonalContactInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactInput.swift; sourceTree = "<group>"; };
 		7F3890FA2B4EC62E0052469D /* PersonalContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactDetailView.swift; sourceTree = "<group>"; };
 		7F9F5C512B4F7E6000B8F4ED /* PersonalContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalContactDelegate.swift; sourceTree = "<group>"; };
 		7FA930E12B451BAF003B9CC3 /* Contact-Manager-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact-Manager-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7FD905862B498244005D82AC /* PersonalContact.swift */,
+				7F224E7B2B58A8F100D79C10 /* PersonalContactInput.swift */,
 				7F9F5C512B4F7E6000B8F4ED /* PersonalContactDelegate.swift */,
 				7FD9058A2B498619005D82AC /* PersonalContactManager.swift */,
 			);
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FD9058B2B498619005D82AC /* PersonalContactManager.swift in Sources */,
+				7F224E7C2B58A8F100D79C10 /* PersonalContactInput.swift in Sources */,
 				7FD905872B498244005D82AC /* PersonalContact.swift in Sources */,
 				7FA930E92B451BAF003B9CC3 /* PersonalContactsViewController.swift in Sources */,
 				7FD9058F2B498B5B005D82AC /* PersonalContactsView.swift in Sources */,
